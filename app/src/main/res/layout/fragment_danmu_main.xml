@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <edu.tjrac.swant.bestcase.widget.danmu.DanMuSurfaceView
+        android:id="@+id/dml_page_main"
+        android:layout_width="match_parent"
+        android:background="@color/accent_black50"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </edu.tjrac.swant.bestcase.widget.danmu.DanMuSurfaceView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_sj_danmu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="随机发送"/>
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name"/>
+
+
+        <Button
+            android:id="@+id/bt_fs_danmu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发送"/>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:monkey="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <edu.tjrac.swant.bestcase.widget.clock.MiClockView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        monkey:backgroundColor="#237EAD"
+        monkey:darkColor="#80ffffff"
+        monkey:lightColor="#ffffff"
+        monkey:textSize="14sp" />
+</LinearLayout>

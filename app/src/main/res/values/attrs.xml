@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <attr name="containerBackground" format="reference|color"></attr>
+    <attr name="cardBackground" format="reference|color"></attr>
+    <attr name="titleColor" format="reference|color"></attr>
+
+
+    <attr name="textColor" format="reference|color"></attr>
+    <attr name="secondTextColor" format="reference|color"></attr>
+
+
+    <attr name="selectorBtn" format="reference"></attr>
+    <attr name="selectorListItem" format="reference"></attr>
+
+
+    <attr name="barSelectTextColor" format="reference|color"></attr>
+    <attr name="barTextColor" format="reference|color"></attr>
+
+
+    <declare-styleable name="MiClockView">
+        <attr name="backgroundColor" format="color" />
+        <attr name="lightColor" format="color" />
+        <attr name="darkColor" format="color" />
+        <attr name="textSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="LightSkyView">
+        <attr name="auto_play" format="boolean"></attr>
+        <attr name="skyColor" format="color"/>
+        <attr name="meteor_speed" format="integer"></attr>
+        <attr name="meteor_color" format="color"/>
+        <attr name="star_color" format="color"/>
+        <attr name="meteorAngle" format="integer"/>
+        <attr name="meteorSize" format="dimension"/>
+        <attr name="maxStartSize" format="dimension"/>
+        <attr name="minStartSize" format="dimension"/>
+    </declare-styleable>
+
+</resources>

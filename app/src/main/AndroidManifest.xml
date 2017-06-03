@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="edu.tjrac.swant.bestcase">
+
+    <!-- 读取联系人权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <!-- 拨打电话权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+    <!-- <uses-feature android:name="android.hardware.camera2" /> -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ufo_ed"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.Day">
+        <activity android:name=".moudle.main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".moudle.settings.SettingsActivity"
+            android:label="@string/title_activity_settings">
+        </activity>
+        <activity android:name=".moudle.laboratory.HorizontalScrollViewTestActivity">
+        </activity>
+        <activity android:name=".moudle.MainSeachActivity">
+        </activity>
+        <activity android:name=".moudle.laboratory.diy_views.DiyViewsActivity">
+        </activity>
+        <activity android:name=".moudle.laboratory.sensor.SensorActivity">
+        </activity>
+        <activity
+            android:name=".moudle.line.LinesActivity"
+            android:label="Line">
+        </activity>
+        <activity android:name=".moudle.user_center.UserCenterActivity">
+        </activity>
+        <activity android:name=".moudle.main.NotifyActivity">
+        </activity>
+        <activity android:name=".moudle.camera.CameraActivity">
+        </activity>
+        <activity android:name=".moudle.camera.Camera2Activity">
+        </activity>
+        <activity
+            android:name=".moudle.main.gank.GankActivity"
+            android:label="@string/title_activity_gank"
+            android:theme="@style/AppTheme.Day">
+        </activity>
+    </application>
+
+</manifest>

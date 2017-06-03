@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.tjrac.swant.bestcase.moudle.laboratory.HorizontalScrollViewTestActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/accent_brown"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tl_hor_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabBackground="?colorPrimaryDark"
+                app:tabIndicatorColor="?colorPrimary"
+                >
+            </android.support.design.widget.TabLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_hor_test"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+        </android.support.v4.view.ViewPager>
+
+        <edu.tjrac.swant.bestcase.widget.ViewPagerIndicater
+            android:id="@+id/vpi_hor_test"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+        </edu.tjrac.swant.bestcase.widget.ViewPagerIndicater>
+
+        <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
+            android:id="@+id/hor_cycle_vp"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:icvp_center_page_scale_offset="30dp"
+            app:icvp_max_page_scale="0.8"
+            app:icvp_medium_scaled="true"
+            app:icvp_min_page_scale="0.5"
+            app:icvp_min_page_scale_offset="5dp"
+            app:icvp_scroll_duration="500"/>
+    </LinearLayout>
+</ScrollView>

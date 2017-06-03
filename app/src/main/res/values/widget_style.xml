@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="MyToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:elevation" tools:ignore="NewApi">12dp</item>
+        <item name="theme">@style/Toolbar.day</item>
+    </style>
+
+    <style name="Toolbar.day" parent="Toolbar.Base">
+        <item name="android:background">?colorPrimary</item>
+    </style>
+
+    <style name="Toolbar.night" parent="Toolbar.Base">
+        <item name="android:background">?colorPrimary</item>
+    </style>
+
+    <style name="Toolbar.Base" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:translationZ">@dimen/thick_trans</item>
+        <item name="android:elevation">@dimen/toolbar_elevation</item>
+        <!--表示CheckBox、EditText、Switch、Spinner、RadioButton等控件默认时的色调-->
+        <!--<item name="colorControlNormal"></item>-->
+        <!--<item name="android:colorControlActivated"></item>-->
+        <!--<item name="colorControlHighlight">@color/accent_black</item>-->
+    </style>
+    <!-- toolbar弹出菜单样式 -->
+    <!--<style name="ToolbarPopupTheme" parent="@style/ThemeOverlay.AppCompat.Dark">-->
+    <style name="ToolbarPopupTheme" parent="@style/ThemeOverlay.AppCompat.Light">
+        <!--<item name="android:colorBackground">@color/colorPrimary</item>-->
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+        <!--新增一个item，用于控制menu-->
+    </style>
+
+    <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>  <!--把该属性改为false即可使menu位置位于toolbar之下-->
+    </style>
+
+    //cardview
+
+    <style name="ClickableCardView" parent="SameCornerRadiusCardview">
+        <item name="android:clickable">true</item>
+        <item name="android:translationZ">4dp</item>
+        <!--<item name="cardMaxElevation">4dp</item>-->
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="SameCornerRadiusCardview" parent="Base.CardView">
+        <!-- 圆角-->
+        <item name="cardCornerRadius">8dp</item>
+        <!--<item name=" app:contentPadding">8dp</item>-->
+        <!--阴影-->
+        <item name="cardElevation">8dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <!--<item name="cardBackgroundColor">@color/colorPrimary</item>-->
+    </style>
+
+
+    //dialog
+
+    <style name="dialog.day" parent="@android:style/Theme.Material.Dialog">
+
+    </style>
+
+    <style name="dialog.night" parent="@android:style/Theme.Material.Dialog">
+
+    </style>
+
+
+</resources>

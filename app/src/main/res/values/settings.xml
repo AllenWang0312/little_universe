@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="time_version">
+        <item>一天内</item>
+        <item>一周内</item>
+        <item>一月内</item>
+    </string-array>
+    <string-array name="textSize_version">
+    <item>非常重要</item>
+    <item>重要</item>
+    <item>一般</item>
+</string-array>
+    <string-array name="textfonts">
+        <item>digital-7</item>
+        <item>ltjh</item>
+        <item>roboto-light</item>
+        <item>roboto-thin</item>
+    </string-array>
+</resources>

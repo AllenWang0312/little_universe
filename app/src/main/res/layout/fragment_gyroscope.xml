@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<android.support.v4.widget.NestedScrollView-->
+
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--&gt;-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="200dp"-->
+        <!--android:background="@color/accent_black50"-->
+        <!--&gt;</View>-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="values[]"
+        />
+
+    <TextView
+        android:id="@+id/tv_x_gyro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="x"
+        />
+
+    <TextView
+        android:id="@+id/tv_y_gyro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="y"
+        />
+
+    <TextView
+        android:id="@+id/tv_z_gyro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="z"
+        />
+    <edu.tjrac.swant.bestcase.widget.OscilloscopeSurfaceView
+        android:id="@+id/Osci_for_x"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+</LinearLayout>
+    <!--</android.support.v4.widget.NestedScrollView>-->

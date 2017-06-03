@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/gablish_daily"
+        android:icon="@drawable/ic_delete_white_24dp"
+        android:title="回收站"
+        app:showAsAction="always"
+        />
+    <item   android:id="@+id/locked_daily"
+        android:icon="@drawable/ic_lock_outline_white_24dp"
+        android:title="加密"
+        app:showAsAction="always"/>
+    <item   android:id="@+id/seach_daily"
+        android:icon="@drawable/ic_action_search"
+        android:title="搜索"
+        app:showAsAction="always"/>
+</menu>
