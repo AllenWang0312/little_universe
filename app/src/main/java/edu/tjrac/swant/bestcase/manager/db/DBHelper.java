@@ -17,9 +17,12 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(DBConsts.CREATE_USER_TABLE);
+
         db.execSQL(DBConsts.CREATE_TIPS_TABLE);
         db.execSQL(DBConsts.CREATE_NOTICE_TABLE);
+        db.execSQL(DBConsts.CREATE_NOTE_TABLE);
         db.execSQL(DBConsts.CREATE_DAILY_TABLE);
+
         db.execSQL(DBConsts.CREATE_CONTACT_TABLE);
     }
     @Override

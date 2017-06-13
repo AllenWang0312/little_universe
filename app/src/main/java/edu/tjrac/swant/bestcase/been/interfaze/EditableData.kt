@@ -1,4 +1,4 @@
-package edu.tjrac.swant.bestcase.base
+package edu.tjrac.swant.bestcase.been.interfaze
 
 import android.content.ContentValues
 import android.database.Cursor
@@ -8,18 +8,12 @@ import android.database.Cursor
  */
 abstract class EditableData : SaveableData {
     var create_time: Long? = 0
-    var last_alter_time: Long? = 0;
+    var last_alter_time: Long? = 0
 
-    init {
-        create_time = System.currentTimeMillis();
+    constructor(){
+        create_time = System.currentTimeMillis()
     }
-
-    constructor() {
-
-    }
-
-
-    constructor(c: Cursor) {
+    constructor(c: Cursor) : this() {
         this.create_time = c.getLong(c.getColumnIndex("create_time"))
         this.last_alter_time = c.getLong(c.getColumnIndex("last_alter_time"))
     }

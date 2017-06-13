@@ -5,6 +5,14 @@
         <item>一周内</item>
         <item>一月内</item>
     </string-array>
+    <string-array name="record_type">
+        <item>all</item>
+        <item>tips</item>
+        <item>notice</item>
+        <item>note</item>
+        <item>daily</item>
+    </string-array>
+
     <string-array name="textSize_version">
     <item>非常重要</item>
     <item>重要</item>

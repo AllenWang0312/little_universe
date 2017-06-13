@@ -1,4 +1,4 @@
-package edu.tjrac.swant.bestcase.common.util;
+package edu.tjrac.swant.bestcase.common.swant;
 
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;

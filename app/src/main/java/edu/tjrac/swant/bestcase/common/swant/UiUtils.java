@@ -2,7 +2,13 @@ package edu.tjrac.swant.bestcase.common.swant;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.v7.view.menu.MenuPopupHelper;
+import android.support.v7.widget.PopupMenu;
+import android.view.MenuInflater;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+
+import java.lang.reflect.Field;
 
 import edu.tjrac.swant.bestcase.R;
 
@@ -44,5 +50,30 @@ public class UiUtils {
     public static int Px2Dp(Context context, float px) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (px / scale + 0.5f);
+    }
+
+    public static void showPopmenu(Context context, View v,
+                                   boolean withIcon,
+                                   int menuId, PopupMenu.OnMenuItemClickListener onMenuItemClickListener) {
+        PopupMenu popup = new PopupMenu(context, v);
+        if (withIcon) {
+            try {
+                Field field = popup.getClass().getDeclaredField("mPopup");
+                field.setAccessible(true);
+                MenuPopupHelper mHelper = (MenuPopupHelper) field.get(popup);
+                mHelper.setForceShowIcon(true);
+            } catch (IllegalAccessException | NoSuchFieldException e) {
+                e.printStackTrace();
+            }
+        }
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(menuId, popup.getMenu());
+//                if (vp.getCurrentItem() == 0) {
+//                    popup.getMenu().findItem(R.id.light_mod).setVisible(true);
+//                } else {
+//                    popup.getMenu().findItem(R.id.light_mod).setVisible(false);
+//                }
+        popup.setOnMenuItemClickListener(onMenuItemClickListener);
+        popup.show();
     }
 }

@@ -12,8 +12,8 @@ import android.view.LayoutInflater
 import android.widget.EditText
 import android.widget.TextView
 import edu.tjrac.swant.bestcase.R
-import edu.tjrac.swant.bestcase.been.Tips
-import edu.tjrac.swant.bestcase.common.util.UiUtils
+import edu.tjrac.swant.bestcase.been.record.Tips
+import edu.tjrac.swant.bestcase.common.swant.UiUtils
 import edu.tjrac.swant.bestcase.manager.db.DBConsts
 
 /**
@@ -21,9 +21,9 @@ import edu.tjrac.swant.bestcase.manager.db.DBConsts
  */
 
 @SuppressLint("ValidFragment")
-class AddTipsDialog(internal var db: SQLiteDatabase) : DialogFragment() {
+class AddRecordDialog(internal var db: SQLiteDatabase) : DialogFragment() {
 
-    internal var mTips: Tips ?= null
+    internal var mTips: Tips?= null
     internal var et: EditText ?= null
     internal var tv: TextView ?= null
 

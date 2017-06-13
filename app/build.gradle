@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'kotlin-android'//kotlin
 android {
     compileSdkVersion 25
     buildToolsVersion '25.0.3'
     defaultConfig {
         applicationId "edu.tjrac.swant.bestcase"
         minSdkVersion 21
-        targetSdkVersion 23
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -34,7 +34,15 @@ dependencies {
     //    })
     //    testCompile 'junit:junit:4.12'
 
-    compile 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
     compile project(':support')
+
+//    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"//kotlin
+
+    compile 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
 }
 
