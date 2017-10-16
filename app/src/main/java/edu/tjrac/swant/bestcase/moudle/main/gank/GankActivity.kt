@@ -9,9 +9,9 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
-import butterknife.bindView
 import edu.tjrac.swant.bestcase.R
 import edu.tjrac.swant.bestcase.common.adapter.ViewPagerAdapter
+import kotterknife.bindView
 
 class GankActivity : AppCompatActivity() {
 
@@ -26,12 +26,12 @@ class GankActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gank)
         setSupportActionBar(toolbar)
-        pagerAdapter= ViewPagerAdapter(supportFragmentManager)
-        var meizi : MeiziFragment = MeiziFragment()
 
-        pagerAdapter!!.addFragment(meizi,"meizi1")
-        pagerAdapter!!.addFragment(meizi,"meizi2")
-        pagerAdapter!!.addFragment(meizi,"meizi3")
+        pagerAdapter= ViewPagerAdapter(supportFragmentManager)
+
+        pagerAdapter!!.addFragment( MeiziFragment(),"meizi1")
+        pagerAdapter!!.addFragment( MeiziFragment(),"meizi2")
+        pagerAdapter!!.addFragment( MeiziFragment(),"meizi3")
 
         mViewPager.adapter=pagerAdapter
         tab.setupWithViewPager(mViewPager)

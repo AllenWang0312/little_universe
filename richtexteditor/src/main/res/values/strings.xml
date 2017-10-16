@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RichTextEditor</string>
+    <string name="title_activity_rich_text_editor">RichTextEditorActivity</string>
+    <string name="title_activity_markdown_editor">MarkdownEditorActivity</string>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<edu.tjrac.swant.richtexteditor.MightyNestedScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="48dp"
+    android:layout_marginRight="48dp"
+
+    >
+
+    <android.support.v7.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/accent_white100"
+        app:contentPadding="16dp"
+        >
+        <!--android:layout_marginTop="100dp"-->
+        <!--android:layout_marginLeft="16dp"-->
+        <!--android:layout_marginRight="16dp"-->
+        <!--android:layout_marginBottom="40dp"-->
+
+
+        <edu.tjrac.swant.richtexteditor.markdown.MarkdownEditText
+            android:id="@+id/mdet_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:gravity="start"
+            android:imeOptions="actionNone"
+            android:minHeight="500dp"
+            android:textSize="12sp"
+            />
+
+
+    </android.support.v7.widget.CardView>
+
+</edu.tjrac.swant.richtexteditor.MightyNestedScrollView>

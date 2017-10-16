@@ -8,9 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import butterknife.bindView
-
 import edu.tjrac.swant.bestcase.R
+import kotterknife.bindView
 
 /**
  * Created by wpc on 2017/4/19.

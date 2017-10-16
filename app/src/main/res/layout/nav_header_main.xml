@@ -1,45 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
-    xmlns:tools="http://schemas.android.com/tools"
     android:gravity="bottom|center_horizontal"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
     tools:background="@color/accent_orange"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="25dp">
     <!--android:background="@drawable/side_nav_bar"-->
     <TextView
+        android:id="@+id/tv_location_nav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="24dp"
         android:text="杭州"
-        android:id="@+id/tv_location_nav"
-        />
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/portrait_nav_head"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:src="@mipmap/ufo_ed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <TextView
         android:id="@+id/tv_name_nav_head"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:text="Demo"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="20sp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+        app:layout_constraintStart_toEndOf="@+id/portrait_nav_head"
+        app:layout_constraintTop_toTopOf="@+id/portrait_nav_head"/>
 
     <TextView
         android:id="@+id/tv_address_nav_head"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1007991483@qq.com"/>
+        android:text="1007991483@qq.com"
+        app:layout_constraintStart_toStartOf="@+id/tv_name_nav_head"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_nav_head"/>
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+android:gravity="right|center_vertical"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <ImageView
+            android:id="@+id/iv_address"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/action_icon_size"
+            android:src="@drawable/ic_location_on_white_24dp"
+            />
+        <ImageView
+            android:id="@+id/iv_folder"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/action_icon_size"
+            android:src="@drawable/ic_folder_open_white_24dp"
+            />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

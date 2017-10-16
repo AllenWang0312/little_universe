@@ -1,0 +1,18 @@
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swiper"
+    android:soundEffectsEnabled="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/accent_black50"
+    >
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyc_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/accent_black50"
+        >
+    </android.support.v7.widget.RecyclerView>
+
+</android.support.v4.widget.SwipeRefreshLayout>

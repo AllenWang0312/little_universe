@@ -72,9 +72,9 @@ public class Camera2Activity extends AppCompatActivity implements View.OnClickLi
      * 初始化
      */
     private void initVIew() {
-        iv_show = (ImageView) findViewById(R.id.iv_show_camera2_activity);
-        //mSurfaceView
-        mSurfaceView = (SurfaceView) findViewById(R.id.surface_view_camera2_activity);
+//        iv_show = findViewById(R.id.iv_show_camera2_activity);
+//        //mSurfaceView
+//        mSurfaceView =  findViewById(R.id.surface_view_camera2_activity);
         mSurfaceView.setOnClickListener(this);
         mSurfaceHolder = mSurfaceView.getHolder();
         mSurfaceHolder.setKeepScreenOn(true);

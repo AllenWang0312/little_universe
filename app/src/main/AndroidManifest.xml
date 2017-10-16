@@ -24,10 +24,12 @@
         android:icon="@mipmap/ufo_ed"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Day">
-
-        <activity android:name=".moudle.main.MainActivity">
+        <activity
+            android:name=".moudle.main.MainActivity"
+            android:theme="@style/AppTheme.Day.StrasTranslate">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -62,8 +64,21 @@
         </activity>
         <activity
             android:name=".moudle.main.gallery.GalleryActivity"
-            android:label="@string/title_activity_gallery"
-           >
+            android:label="@string/title_activity_gallery">
+        </activity>
+        <activity
+            android:name=".moudle.main.alarm.AlarmActivity"
+            android:label="@string/title_activity_alarm">
+        </activity>
+        <activity
+            android:name=".moudle.main.filesystem.FileSystemActivity"
+            android:label="@string/title_activity_file_system"
+            android:theme="@style/AppTheme.Day">
+        </activity>
+        <activity
+            android:name=".moudle.main.filesystem.FileSystemActivity2"
+            android:label="@string/title_activity_file_system2"
+            android:theme="@style/AppTheme.Day">
         </activity>
     </application>
 

@@ -22,4 +22,9 @@
     <dimen name="image_width">120dp</dimen>
     <dimen name="image_final_width">48dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
+    <dimen name="recyc_card_margin">8dp</dimen>
+
+    <dimen name="action_icon_size">32dp</dimen>
+
+    <dimen name="notice_icon_size">24dp</dimen>
 </resources>

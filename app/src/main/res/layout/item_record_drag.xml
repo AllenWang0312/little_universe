@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    xmlns:tools="http://schemas.android.com/tools"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_margin="8dp"
+                                    android:minHeight="48dp"
+                                    app:cardCornerRadius="8dp"
+
+                                    app:contentPadding="8dp"
+    >
+
+    <!--<com.guanaj.easyswipemenulibrary.EasySwipeMenuLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:contentView="@+id/content"-->
+        <!--app:leftMenuView="@+id/left"-->
+        <!--app:rightMenuView="@+id/right">-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/left"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:padding="20dp">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="分享"/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/content"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="#cccccc"-->
+            <!--android:orientation="vertical"-->
+            <!--android:padding="20dp">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_content"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:text="這是一個tips"-->
+                <!--android:textSize="24sp"-->
+                <!--/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/right"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:padding="20dp"-->
+                <!--android:text="删除"/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/right_menu_2"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:padding="20dp"-->
+                <!--android:text="收藏"/>-->
+        <!--</LinearLayout>-->
+    <!--</com.guanaj.easyswipemenulibrary.EasySwipeMenuLayout>-->
+
+
+</android.support.v7.widget.CardView>

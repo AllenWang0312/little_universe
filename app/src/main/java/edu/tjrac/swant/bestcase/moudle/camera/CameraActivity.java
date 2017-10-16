@@ -1,5 +1,6 @@
 package edu.tjrac.swant.bestcase.moudle.camera;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.ImageFormat;
@@ -43,10 +44,10 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
      * 初始化控件
      */
     private void initView() {
-        iv_show = (ImageView) findViewById(R.id.iv_show_camera2_activity);
+//        iv_show = findViewById(R.id.iv_show_camera2_activity);
         //mSurfaceView
-        mSurfaceView = (SurfaceView) findViewById(R.id.surface_view_camera2_activity);
-        mFloatingActionButton = (FloatingActionButton) findViewById(R.id.fab_camera_take_photo);
+//        mSurfaceView =  findViewById(R.id.surface_view_camera2_activity);
+//        mFloatingActionButton =  findViewById(R.id.fab_camera_take_photo);
 
         mSurfaceHolder = mSurfaceView.getHolder();
         // mSurfaceView 不需要自己的缓冲区
@@ -58,9 +59,15 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
                 // 初始化Camera
                 initCamera();
             }
-
+            @SuppressLint("NewApi")
             @Override
             public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+//               Canvas can =    mSurfaceHolder.getSurface().lockHardwareCanvas();
+//                Paint p = new Paint();
+//                p.setColor(Color.WHITE);
+//                can.drawCircle(200, 200, 10, p);
+//                mSurfaceHolder.getSurface().unlockCanvasAndPost(can);
+//                new MyThread().run();
             }
 
             @Override
@@ -77,9 +84,23 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
         mFloatingActionButton.setOnClickListener(this);
     }
 
+//    @SuppressLint("NewApi")
+//    //内部类的内部类
+//    class MyThread implements Runnable{
+//        @Override
+//        public void run() {
+//           Canvas canvas =mSurfaceHolder.getSurface().lockHardwareCanvas();//获取画布
+//            Paint mPaint = new Paint();
+//            mPaint.setColor(Color.BLUE);
+//            canvas.drawCircle(200, 200, 10, mPaint);
+//            mSurfaceHolder.unlockCanvasAndPost(canvas);//解锁画布，提交画好的图像
+//        }
+//    }
+
     /**
      * SurfaceHolder 回调接口方法
      */
+
     private void initCamera() {
         mCamera = Camera.open();//默认开启后置
         mCamera.setDisplayOrientation(90);//摄像头进行旋转90°

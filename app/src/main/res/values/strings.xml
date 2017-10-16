@@ -217,5 +217,10 @@ Just do what I suppose to do
     <string name="title_activity_gank">GankActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_gallery">GalleryActivity</string>
+    <string name="alarm">闹钟</string>
+    <string name="about">关于</string>
+    <string name="title_activity_alarm">AlarmActivity</string>
+    <string name="title_activity_file_system">FileSystemActivity</string>
+    <string name="title_activity_file_system2">FileSystemActivity2</string>
 
 </resources>

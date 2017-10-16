@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_time_notice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="00:00"
+        android:textSize="48sp"/>
+
+    <TableRow
+        android:minHeight="48dp"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/notice_icon_size"
+            android:layout_height="@dimen/notice_icon_size"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_date_range_black_24dp"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="重复"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cb_sun"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="日"/>
+
+                <CheckBox
+                    android:id="@+id/cb_mon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="一"/>
+
+                <CheckBox
+                    android:id="@+id/cb_tue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="二"/>
+
+                <CheckBox
+                    android:id="@+id/cb_wed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="三"/>
+
+                <CheckBox
+                    android:id="@+id/cb_thu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="四"/>
+
+                <CheckBox
+                    android:id="@+id/cb_fri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="五"/>
+
+                <CheckBox
+                    android:id="@+id/cb_sat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="六"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </TableRow>
+
+    <TableRow android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="@dimen/notice_icon_size"
+            android:layout_height="@dimen/notice_icon_size"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_volume_up_black_24dp"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_volum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提示铃声"
+                />
+
+            <Spinner
+                android:id="@+id/sp_volum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+        <TextView/>
+    </TableRow>
+
+    <TableRow android:layout_height="wrap_content"
+       >
+
+        <ImageView
+            android:layout_width="@dimen/notice_icon_size"
+            android:layout_height="@dimen/notice_icon_size"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_notifications_active_black_24dp"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" android:layout_gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="震动"
+                />
+
+            <CheckBox
+                android:id="@+id/cb_vibrate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"/>
+
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="@dimen/notice_icon_size"
+            android:layout_height="@dimen/notice_icon_size"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_edit_black_24dp"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="标签"
+                />
+
+            <EditText
+                android:id="@+id/et_tags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </TableRow>
+
+</TableLayout>

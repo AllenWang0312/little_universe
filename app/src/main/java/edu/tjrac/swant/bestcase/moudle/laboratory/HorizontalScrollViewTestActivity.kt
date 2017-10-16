@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
-import butterknife.bindView
 import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
 import edu.tjrac.swant.bestcase.R
 import edu.tjrac.swant.bestcase.common.ImageViewPagerAdapter
 import edu.tjrac.swant.bestcase.common.ShowAbleItem
 import edu.tjrac.swant.bestcase.common.TestItemCreater
 import edu.tjrac.swant.bestcase.widget.ViewPagerIndicater
+import kotterknife.bindView
 import java.util.*
 
 //import edu.tjrac.swant.bestcase.widget.ViewPagerIndicater.ViewPagerIndicater;

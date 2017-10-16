@@ -15,6 +15,15 @@ import static java.util.Calendar.getInstance;
 
 public class TimeUtils {
 
+    public static final String[] week ={"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+
+    public static final String[] week_abb ={"Sun","Mon","Tue","Wed","Thu","Fri","Sat"};
+    public static final String[] week_CN ={"星期日","星期一","星期二","星期三","星期四","星期五","星期六"};
+    public static final String[] week_CN_abb ={"日","一","二","三","四","五","六"};
+
+    public static final String[] week_cn ={"周日","周一","周二","周三","周四","周五","周六"};
+
+
     static Time t = new Time();
     static Calendar c = getInstance();
 
@@ -31,11 +40,26 @@ public class TimeUtils {
         SimpleDateFormat sdf = new SimpleDateFormat(str);
         return sdf.format(date);
     }
-
+    public static String getTimeWithFormat(Date date,String str) {
+        SimpleDateFormat sdf = new SimpleDateFormat(str);
+        return sdf.format(date);
+    }
     public static void LogTime() {
         t.setToNow();
         Log.i("Time", t.year + "-" + t.month + "-" + t.monthDay);
         Log.i("Calendar", c.get(Calendar.YEAR) + "-" + c.get(Calendar.MONTH) + "-" + c.get(Calendar.DAY_OF_MONTH));
         Log.i("Date", getTimeWithFormat(NO_BLANK));
+    }
+
+    public static String getSelectDaysString(boolean[] select){
+        StringBuffer buffer=new StringBuffer();
+        for (int i = 0; i <select.length ; i++) {
+            if(select[i]){
+                if(buffer.length()>0){buffer.append(",");}
+                buffer.append(week_cn[i]);
+
+            }
+        }
+        return buffer.toString();
     }
 }

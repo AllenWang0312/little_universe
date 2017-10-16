@@ -11,11 +11,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import butterknife.bindView
-
 import edu.tjrac.swant.bestcase.R
 import edu.tjrac.swant.bestcase.util.utils.L
 import edu.tjrac.swant.bestcase.widget.OscilloscopeSurfaceView
+import kotterknife.bindView
 
 /**
  * Created by wpc on 2017/4/22.

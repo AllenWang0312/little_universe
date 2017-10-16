@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
-import butterknife.bindView
 
 import edu.tjrac.swant.bestcase.R
+import kotterknife.bindView
 
 class MainSeachActivity : AppCompatActivity() {
 
-     val mToolbar: Toolbar by bindView(R.id.toolbar);
+     val mToolbar: Toolbar by bindView(R.id.toolbar)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

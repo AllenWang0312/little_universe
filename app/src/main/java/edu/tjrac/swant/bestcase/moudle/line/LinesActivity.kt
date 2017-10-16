@@ -4,13 +4,11 @@ import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
-import butterknife.bindView
-
 import com.ashokvarma.bottomnavigation.BottomNavigationBar
 import com.ashokvarma.bottomnavigation.BottomNavigationItem
-
 import edu.tjrac.swant.bestcase.R
 import edu.tjrac.swant.bestcase.common.adapter.ViewPagerAdapter
+import kotterknife.bindView
 
 class LinesActivity : AppCompatActivity() {
 

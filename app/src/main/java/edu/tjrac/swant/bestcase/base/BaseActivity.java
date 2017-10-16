@@ -16,6 +16,9 @@ public class BaseActivity extends AppCompatActivity {
         if(title!=null)toolbar.setTitle(title);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+//        EditText et;
+//        et.addTextChangedListener();
     }
 
     @Override

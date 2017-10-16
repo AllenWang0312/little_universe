@@ -1,15 +1,27 @@
 apply plugin: 'com.android.application'
+
 apply plugin: 'kotlin-android'//kotlin
+
+apply plugin: 'org.greenrobot.greendao'
+
+
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.3'
+    compileSdkVersion 26
+    buildToolsVersion '26.0.1'
     defaultConfig {
         applicationId "edu.tjrac.swant.bestcase"
         minSdkVersion 21
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+//        jackOptions {
+//            enabled true
+//        }
+        android.compileOptions.sourceCompatibility 1.8
+
+        android.compileOptions.targetCompatibility 1.8
     }
     buildTypes {
         release {
@@ -20,29 +32,145 @@ android {
     productFlavors {
     }
     repositories {
+        jcenter() // If not already there
         mavenCentral()
         maven {
             url 'https://oss.sonatype.org/content/repositories/snapshots/'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility 1.8
+    }
+    greendao {
+        schemaVersion 1
+        daoPackage 'edu.tjrac.swant.bestcase.been.dao'
+        targetGenDir 'src/main/java'
+    }
+//    dexOptions {
+//        //使用增量模式构建
+//        incremental true
+//        //最大堆内存
+//        javaMaxHeapSize "8g"
+//        //是否支持大工程模式
+//        jumboMode = true
+//        //预编译
+//        preDexLibraries = true
+//        //线程数
+//        threadCount = 8
+//    }
 }
 
 dependencies {
-    //    compile fileTree(include: ['*.jar'], dir: 'libs')
-    //    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-    //        exclude group: 'com.android.support', module: 'support-annotations'
-    //    })
-    //    testCompile 'junit:junit:4.12'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
 
-    compile project(':support')
+    //    compile 'com.facebook.stetho:stetho-urlconnection:1.4.1'
+    compile 'com.facebook.stetho:stetho:1.5.0'
 
-//    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"//kotlin
+    //        compile 'com.facebook.stetho:stetho-okhttp3:1.5.0'
 
-    compile 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    //    debugCompile 'c​​om.amitshekhar.android:debug-db:1.0.0'
+
+    //内存泄漏检测
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    compile 'com.android.support:multidex:1.0.2'
+
+    //    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    //kotlin
+    compile 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
+
+    //greendao
+    compile 'org.greenrobot:greendao:3.0.1'
+    compile 'org.greenrobot:greendao-generator:3.0.0'
+
+    //    compile 'org.litepal.android:core:1.4.1'
+
+    //    compile 'com.idescout.sql:sqlscout-server:2.0'
+    compile 'com.neovisionaries:nv-websocket-client:2.2'
+
+    //辅助功能
+    compile 'com.orhanobut:logger:2.1.1'
+    compile 'com.github.GrenderG:Toasty:1.1.4'
+
+    //框架
+
+    //图片加载
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.3'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    //event bus
+    compile 'org.greenrobot:eventbus:3.0.0'
+
+    //rxjava
+    compile 'com.squareup.retrofit2:retrofit-converters:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-scalars:2.1.0'
+
+    //    compile 'io.reactivex:rxandroid:1.0.0'
+    compile 'com.squareup.okhttp:okhttp:2.7.4'
+
+    //    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar'
+
+    //    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+
+    //官方view
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:support-v4:26.1.0'
+    compile 'com.android.support:design:26.1.0'
+
+
+
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.ashokvarma.android:bottom-navigation-bar:1.4.1'
+    compile 'com.google.android:flexbox:0.2.7'
+
+    //自定义view
+    compile 'com.oguzdev:CircularFloatingActionMenu:1.0.2'
+
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+
+    //  compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+
+//    compile 'com.github.anzaizai:EasySwipeMenuLayout:1.1.2'//item侧滑
+
+    //    compile 'com.lucasurbas:listitemview:0.9.0'
+
+    //    compile 'com.youth.banner:banner:1.4.9'
+
+    //    compile 'com.jude:easyrecyclerview:4.2.3'//News
+
+    //    compile 'de.hdodenhof:circleimageview:2.1.0'
+
+    //微博全景图
+    compile 'com.github.CN-ZPH:weibo360panorama:v1.0.1'
+
+    //For Lifecycles, LiveData, and ViewModel
+    compile 'android.arch.lifecycle:runtime:1.0.0-alpha9-1'
+    compile 'android.arch.lifecycle:extensions:1.0.0-alpha9-1'
+    annotationProcessor "android.arch.lifecycle:compiler:1.0.0-alpha9-1"
+
+    //For Room
+//    compile 'android.arch.persistence.room:runtime:1.0.0-alpha9-1'
+//    annotationProcessor "android.arch.persistence.room:compiler:1.0.0-alpha9-1"
+    implementation project(':richtexteditor')
 }
 
+
+
+
+
+apply plugin: 'kotlin-android-extensions'

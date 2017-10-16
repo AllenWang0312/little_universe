@@ -9,10 +9,10 @@ import android.transition.Transition
 import android.transition.TransitionInflater
 import android.widget.ImageView
 import android.widget.TextView
-import butterknife.bindView
 import edu.tjrac.swant.bestcase.R
 import edu.tjrac.swant.bestcase.base.BaseActivity
 import edu.tjrac.swant.bestcase.util.utils.GuiUtils
+import kotterknife.bindView
 
 /**
  * Created by wpc on 2017/4/27.

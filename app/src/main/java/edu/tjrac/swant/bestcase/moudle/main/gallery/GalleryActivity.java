@@ -1,15 +1,13 @@
 package edu.tjrac.swant.bestcase.moudle.main.gallery;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,16 +15,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.tbruyelle.rxpermissions.RxPermissions;
 
 import java.util.HashMap;
 import java.util.List;
 
 import edu.tjrac.swant.bestcase.R;
-import edu.tjrac.swant.bestcase.base.ProgressBarActivity;
+import edu.tjrac.swant.bestcase.base.BaseActivity;
 import edu.tjrac.swant.bestcase.been.interfaze.OnItemClickListener;
 import edu.tjrac.swant.bestcase.manager.SystemResProvider;
 
-public class GalleryActivity extends ProgressBarActivity {
+public class GalleryActivity extends BaseActivity {
 
     private HashMap<String, List<String>> mGruopMap = new HashMap<String, List<String>>();
     RecyclerView mRecyclerView;
@@ -43,23 +42,31 @@ public class GalleryActivity extends ProgressBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
+        RxPermissions rx=new RxPermissions(this);
+        rx.request(Manifest.permission.CAMERA).subscribe(granted -> {
+         if(granted){
+
+         }else {
+
+         }
+        });
         //initData
         getImages();
         //initView
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyc_gallery_main);
+//        mRecyclerView= findViewById(R.id.recyc_gallery_main);
+//
+//        Toolbar toolbar =  findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-//bindData
+//        FloatingActionButton fab = findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+////bindData
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
         GalleryAdapter adapter = new GalleryAdapter(this, mGruopMap);
         adapter.setOnItemClickListener(new OnItemClickListener() {

@@ -13,13 +13,17 @@ import android.widget.ImageView
 import android.widget.TextView
 import de.hdodenhof.circleimageview.CircleImageView
 import edu.tjrac.swant.bestcase.R
+import edu.tjrac.swant.bestcase.moudle.main.contacts.been.Contacts
+import edu.tjrac.swant.bestcase.util.utils.TimeUtils
 import java.util.*
 
 /**
  * Created by wpc on 2017/5/24.
  */
 
-class ContactsExpAdapter(internal var mContext: Context, internal var group_names: ArrayList<String>, internal var mContacts: HashMap<String, ArrayList<Contact>>) : ExpandableListAdapter {
+class ContactsExpAdapter(
+        internal var mContext: Context,
+       internal var contacts: ContactsDatas) : ExpandableListAdapter {
 
     override fun registerDataSetObserver(observer: DataSetObserver) {
 
@@ -30,19 +34,20 @@ class ContactsExpAdapter(internal var mContext: Context, internal var group_name
     }
 
     override fun getGroupCount(): Int {
-        return group_names.size
+        return contacts.grop_name!!.size
     }
 
     override fun getChildrenCount(groupPosition: Int): Int {
-        return mContacts[group_names[groupPosition]]!!.size
+        return contacts.mContacts!!.get(contacts.grop_name!!.get(groupPosition))!!.size
+
     }
 
-    override fun getGroup(groupPosition: Int): ArrayList<Contact>? {
-        return mContacts[group_names[groupPosition]]
+    override fun getGroup(groupPosition: Int): ArrayList<Contacts>? {
+        return contacts.mContacts!!.get(contacts.grop_name!!.get(groupPosition))
     }
 
     override fun getChild(groupPosition: Int, childPosition: Int): Any {
-        return mContacts[group_names[groupPosition]]!!.get(childPosition)
+        return getGroup(groupPosition)!!.get(childPosition)
     }
 
     override fun getGroupId(groupPosition: Int): Long {
@@ -66,6 +71,8 @@ class ContactsExpAdapter(internal var mContext: Context, internal var group_name
             convertView!!.tag = gvh
         } else {
             gvh = convertView.tag as GroupViewHolder
+            gvh.group_name.setText(contacts.grop_name!!.get(groupPosition))
+            gvh.asy_time.setText(TimeUtils.getTimeWithFormat(TimeUtils.HOUR_MIN))
         }
 
         return convertView
@@ -81,10 +88,10 @@ class ContactsExpAdapter(internal var mContext: Context, internal var group_name
         } else {
             cvh = convertView.tag as ChindViewHolder
         }
-        val c = getChild(groupPosition, childPosition) as Contact
-        cvh.name.text = c.user_name
-        if (c.portrait != null) {
-            val input = ContactsContract.Contacts.openContactPhotoInputStream(mContext.contentResolver, c.portrait)
+        val c = getChild(groupPosition, childPosition) as Contacts
+        cvh.name.text = c.name
+        if (c.portrait_uri != null) {
+            val input = ContactsContract.Contacts.openContactPhotoInputStream(mContext.contentResolver, c.portrait_uri)
             cvh.portrait.setImageBitmap(BitmapFactory.decodeStream(input))
         }
 
@@ -119,7 +126,12 @@ class ContactsExpAdapter(internal var mContext: Context, internal var group_name
         return 0
     }
 
-    internal inner class GroupViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    internal inner class GroupViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+
+        var group_name: TextView =itemView.findViewById(R.id.tv_group_name)
+                var asy_time : TextView = itemView.findViewById(R.id.tv_asy_time)
+
+    }
 
     internal inner class ChindViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var portrait: CircleImageView
@@ -130,12 +142,12 @@ class ContactsExpAdapter(internal var mContext: Context, internal var group_name
         var tel: TextView
 
         init {
-            portrait = itemView.findViewById(R.id.cir_portrait_item_contact) as CircleImageView
-            weibo = itemView.findViewById(R.id.iv_item_weibo) as ImageView
-            wechat = itemView.findViewById(R.id.iv_item_wechat) as ImageView
-            qq = itemView.findViewById(R.id.iv_item_qq) as ImageView
-            name = itemView.findViewById(R.id.tv_name_contact) as TextView
-            tel = itemView.findViewById(R.id.tv_tel_contact) as TextView
+            portrait = itemView.findViewById(R.id.cir_portrait_item_contact)
+            weibo = itemView.findViewById(R.id.iv_item_message)
+            wechat = itemView.findViewById(R.id.iv_item_third)
+            qq = itemView.findViewById(R.id.iv_item_third)
+            name = itemView.findViewById(R.id.tv_name_contact)
+            tel = itemView.findViewById(R.id.tv_tel_contact)
         }
     }
 }

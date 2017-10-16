@@ -16,6 +16,7 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import edu.tjrac.swant.bestcase.R
 import edu.tjrac.swant.bestcase.moudle.main.MainActivity
+import kotlinx.android.synthetic.main.toolbar.*
 
 class SettingsActivity : AppCompatPreferenceActivity() {
 

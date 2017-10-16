@@ -17,26 +17,29 @@
         <!--<include layout="@layout/toolbar"></include>-->
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
+            android:layout_height="200dp"
             app:contentScrim="?colorAccent"
-            app:title=""
-            app:titleEnabled="false"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-            android:layout_height="200dp">
+            app:title=""
+            app:titleEnabled="false">
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier="0.7"
                 android:fitsSystemWindows="true"
-                android:src="@mipmap/ufo_ed"/>
+                android:src="@mipmap/ufo_ed"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7"/>
+
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_scrollFlags="scroll|enterAlways"
                 app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/AppTheme.PopupOverlay">
             </android.support.v7.widget.Toolbar>
+
             <android.support.design.widget.TabLayout
                 android:id="@+id/tl_main"
                 android:layout_width="wrap_content"
@@ -54,13 +57,75 @@
 
     </android.support.design.widget.AppBarLayout>
 
+
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_main"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/accent_black50"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         >
     </android.support.v4.view.ViewPager>
+
+    <!--<android.support.design.widget.FloatingActionButton-->
+    <!--android:id="@+id/fab_sub"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom|end"-->
+    <!--android:layout_margin="@dimen/fab_margin"-->
+    <!--android:clickable="true"-->
+    <!--app:srcCompat="@drawable/ic_alarm_white_24dp"/>-->
+    <HorizontalScrollView
+        android:id="@+id/hsv_record_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="56dp">
+
+        <RadioGroup
+            android:id="@+id/rg_record_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/rb_learn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="学习"
+                android:textColor="@color/accent_white100"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_life"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="生活"
+                android:textColor="@color/accent_white100"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_work"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="工作"
+                android:textColor="@color/accent_white100"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_health"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="健康"
+
+                android:textColor="@color/accent_white100"
+                />
+        </RadioGroup>
+    </HorizontalScrollView>
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -69,8 +134,8 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:clickable="true"
-        android:onClick="startNotifyActivity"
-        android:transitionName="@string/main_fab_transition_name"
+
         app:srcCompat="@drawable/ic_add_white_36dp"/>
+
 
 </android.support.design.widget.CoordinatorLayout>
